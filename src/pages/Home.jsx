@@ -33,6 +33,34 @@ const translations = {
         "Martinto Gomez Taxi bietet Premium-Luxustransportdienste an. Buchen Sie jetzt für ein nahtloses und elegantes Erlebnis.",
     },
   },
+  es: {
+    Home: {
+      title: {
+        your: "SU",
+        fast: "RÁPIDO",
+        and: "Y",
+        safe: "SEGURO",
+        ride: "VIAJE",
+      },
+      subtitle: "Experimente el transporte de lujo con Martinto Gomez Taxi",
+      description:
+        "Martinto Gomez Taxi ofrece servicios de transporte de lujo premium. Reserve su viaje ahora para una experiencia fluida y elegante.",
+    },
+  },
+  fr: {
+    Home: {
+      title: {
+        your: "VOTRE",
+        fast: "RAPIDE",
+        and: "ET",
+        safe: "SÛR",
+        ride: "TRAJET",
+      },
+      subtitle: "Découvrez le transport de luxe avec Martinto Gomez Taxi",
+      description:
+        "Martinto Gomez Taxi propose des services de transport de luxe haut de gamme. Réservez dès maintenant pour une expérience fluide et élégante.",
+    },
+  },
 };
 
 function Home() {
@@ -73,8 +101,8 @@ function Home() {
 
       {/* Sección principal */}
       <section
-        id="inicio"
-        className="relative h-screen text-white flex items-center justify-center border-b-4 border-yellow-500"
+        id="home"
+        className="relative h-screen text-white flex items-center justify-center border-b-4 border-yellow-500 max-w-4xl mx-auto"
       >
         {/* Imagen de fondo */}
         <div
@@ -85,9 +113,9 @@ function Home() {
         ></div>
 
         {/* Contenido principal */}
-        <div className="relative z-10 text-center px-4 pb-[80px]">
+        <div className="relative z-10 text-center px-4 pb-[80px] max-w-2xl md:max-w-4xl">
           {/* Título */}
-          <h1 className="text-5xl md:text-7xl font-bold uppercase leading-tight tracking-wide">
+          <h1 className="text-5xl font-bold uppercase leading-tight tracking-wide">
             <div>{t("Home.title.your")}</div>
             <div>{t("Home.title.fast")}</div>
             <div>{t("Home.title.and")}</div>
@@ -96,42 +124,42 @@ function Home() {
           </h1>
 
           {/* Subtítulo */}
-          <p className="mt-8 text-lg md:text-xl ">
+          <p className="mt-6 text-lg md:text-xl lg:text-2xl">
             {t("Home.subtitle")}
           </p>
 
           {/* Botones de redes sociales minimalistas */}
-          <div className="mt-[160px] flex gap-4 justify-center">
+          <div className="mt-12 flex gap-6 justify-center">
             {/* WhatsApp */}
             <button
               onClick={() => handleSocialClick("whatsapp")}
-              className="flex items-center justify-center w-12 h-12 bg-green-500 rounded-full hover:bg-green-600 transition duration-300"
+              className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-green-500 rounded-full hover:bg-green-600 transition duration-300"
             >
-              <i className="ri-whatsapp-line text-2xl text-white"></i>
+              <i className="ri-whatsapp-line text-xl md:text-2xl lg:text-3xl text-white"></i>
             </button>
 
             {/* Instagram */}
             <button
               onClick={() => handleSocialClick("instagram")}
-              className="flex items-center justify-center w-12 h-12 bg-pink-500 rounded-full hover:bg-pink-600 transition duration-300"
+              className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-pink-500 rounded-full hover:bg-pink-600 transition duration-300"
             >
-              <i className="ri-instagram-line text-2xl text-white"></i>
+              <i className="ri-instagram-line text-xl md:text-2xl lg:text-3xl text-white"></i>
             </button>
 
             {/* Facebook */}
             <button
               onClick={() => handleSocialClick("facebook")}
-              className="flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full hover:bg-blue-700 transition duration-300"
+              className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-blue-600 rounded-full hover:bg-blue-700 transition duration-300"
             >
-              <i className="ri-facebook-circle-line text-2xl text-white"></i>
+              <i className="ri-facebook-circle-line text-xl md:text-2xl lg:text-3xl text-white"></i>
             </button>
           </div>
         </div>
 
         {/* Indicador de scroll */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white z-10">
-          <span className="text-xs font-bold">SCROLL</span>
-          <i className="ri-arrow-down-s-line animate-bounce mt-1 text-yellow-500"></i>
+        <div className="absolute bottom-10 md:bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white z-10">
+          <span className="text-xs md:text-sm font-bold">SCROLL</span>
+          <i className="ri-arrow-down-s-line animate-bounce mt-1 text-yellow-500 text-4xl "></i>
         </div>
       </section>
     </>
@@ -139,3 +167,6 @@ function Home() {
 }
 
 export default Home;
+
+
+

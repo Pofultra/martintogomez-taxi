@@ -21,7 +21,6 @@ export const VehicleCard = ({ vehicle, isActive }) => {
         {/* Nombre del vehículo */}
         <h3
           className="text-3xl font-bold mb-4 text-gray-900"
-          style={{ fontFamily: "'Bebas Neue', cursive" }}
         >
           {vehicle.name}
         </h3>
