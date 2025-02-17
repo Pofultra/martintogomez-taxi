@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { Helmet } from "react-helmet-async";
+import logo from "/images/logoa.png"
 
 import LanguageSelector from "./LanguageSelector";
 
@@ -73,7 +74,7 @@ function Navbar({ onOpenWizard }) {
 
         {/* Logo centrado */}
         <div className="text-lg font-bold text-yellow-500 absolute left-1/2 transform -translate-x-1/2">
-          MG TAXI
+          <img src={logo} alt="MG TAXI Logo" className="h-10 mx-auto" />
         </div>
 
         {/* Selector de idioma a la derecha */}
