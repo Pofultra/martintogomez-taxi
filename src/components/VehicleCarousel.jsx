@@ -1,34 +1,39 @@
-// components/About/VehicleCarousel.jsx
-import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
 import { VehicleCard } from "./VehicleCard";
 
 export const VehicleCarousel = ({ vehicles }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(null);
+  const carouselRef = useRef(null);
 
-  // Función para mover el carrusel
-  const moveCarousel = (newDirection) => {
-    setDirection(newDirection);
-    if (newDirection === "left") {
-      setActiveIndex((prev) => (prev === 0 ? vehicles.length - 1 : prev - 1));
-    } else {
-      setActiveIndex((prev) => (prev === vehicles.length - 1 ? 0 : prev + 1));
-    }
+  // Manejar el desplazamiento táctil
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
   };
 
-  // Resetear la dirección después de la animación
-  useEffect(() => {
-    const timer = setTimeout(() => setDirection(null), 500);
-    return () => clearTimeout(timer);
-  }, [direction]);
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 50) {
+      // Deslizar hacia la izquierda
+      setActiveIndex((prev) => (prev === vehicles.length - 1 ? 0 : prev + 1));
+    }
+    if (touchEnd - touchStart > 50) {
+      // Deslizar hacia la derecha
+      setActiveIndex((prev) => (prev === 0 ? vehicles.length - 1 : prev - 1));
+    }
+  };
 
   // Función para calcular las clases y estilos de cada tarjeta
   const getCardStyles = (index) => {
     const position = index - activeIndex;
+    let adjustedPosition = position;
 
     // Manejar el desbordamiento (wrap-around)
-    let adjustedPosition = position;
     if (adjustedPosition < -1) adjustedPosition += vehicles.length;
     if (adjustedPosition > 1) adjustedPosition -= vehicles.length;
 
@@ -39,7 +44,6 @@ export const VehicleCarousel = ({ vehicles }) => {
       ${adjustedPosition === -1 ? "-translate-x-[60%]" : ""}
       ${adjustedPosition === 1 ? "translate-x-[60%]" : ""}
     `;
-
     const cardStyles = {
       transform: `
         perspective(1000px)
@@ -49,32 +53,21 @@ export const VehicleCarousel = ({ vehicles }) => {
       `,
       zIndex: adjustedPosition === 0 ? 10 : 5,
     };
-
     return { cardClasses, cardStyles };
   };
 
   return (
     <div className="relative h-[600px] w-full overflow-hidden">
-      {/* Botones de navegación */}
-      <button
-        onClick={() => moveCarousel("left")}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 p-3 rounded-full text-white hover:bg-black/70 transition-colors"
-      >
-        <ChevronLeft size={24} />
-      </button>
-
-      <button
-        onClick={() => moveCarousel("right")}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 p-3 rounded-full text-white hover:bg-black/70 transition-colors"
-      >
-        <ChevronRight size={24} />
-      </button>
-
       {/* Contenedor del carrusel */}
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div
+        ref={carouselRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        className="relative w-full h-full flex items-center justify-center"
+      >
         {vehicles.map((vehicle, index) => {
           const { cardClasses, cardStyles } = getCardStyles(index);
-
           return (
             <div key={vehicle.id} className={cardClasses} style={cardStyles}>
               <VehicleCard vehicle={vehicle} isActive={index === activeIndex} />

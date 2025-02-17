@@ -17,7 +17,7 @@ export const VehicleCard = ({ vehicle, isActive }) => {
       <ImageSlider images={vehicle.images} />
 
       {/* Contenido */}
-      <div className="p-6 pb-8">
+      <div className="p-6 pb-8 text-center">
         {/* Nombre del vehículo */}
         <h3
           className="text-3xl font-bold mb-4 text-gray-900"
