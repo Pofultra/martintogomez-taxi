@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import Mission from "./pages/Mission";
 import Contact from "./pages/Contact";
 
 // Modal de reserva
@@ -27,6 +28,7 @@ function App() {
           <Navbar onOpenWizard={openWizard} />
           <Home onOpenWizard={openWizard} />
           <About />
+          <Mission />
           <Services />
           <Contact />
           <Footer />
