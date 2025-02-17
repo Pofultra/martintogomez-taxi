@@ -15,10 +15,10 @@ function LanguageSelector({ language, setLanguage }) {
         aria-label="Select Language"
         aria-describedby="language-description"
       >
-        <option value="es">Español</option>
-        <option value="en">English</option>
-        <option value="fr">Français</option>
-        <option value="de">Deutsch</option>
+        <option value="es">es</option>
+        <option value="en">en</option>
+        <option value="fr">fr</option>
+        <option value="de">de</option>
       </select>
       <span id="language-description" className="sr-only">
         Choose your preferred language for the website.

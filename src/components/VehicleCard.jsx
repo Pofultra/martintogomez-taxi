@@ -8,7 +8,7 @@ export const VehicleCard = ({ vehicle, isActive }) => {
     <div
       className={`
         relative bg-white rounded-3xl shadow-xl overflow-hidden
-        w-[400px] transition-all duration-500 transform-gpu
+        w-[350px] transition-all duration-500 transform-gpu
         ${isActive ? "scale-105 shadow-2xl" : "scale-100 shadow-lg"}
         hover:scale-105 hover:shadow-2xl
       `}
