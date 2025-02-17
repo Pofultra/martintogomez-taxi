@@ -90,9 +90,9 @@ function Home() {
     <>
       {/* Metaetiquetas dinámicas con react-helmet */}
       <Helmet>
-        <title>{t("Home.title.your")} | Martinto Gomez Taxi</title>
+        <title>{t("Home.subtitle")} | Martinto Gomez Taxi</title>
         <meta name="description" content={t("Home.description")} />
-        <meta property="og:title" content={t("Home.title.your")} />
+        <meta property="og:title" content={t("Home.subtitle")} />
         <meta property="og:description" content={t("Home.description")} />
         <meta property="og:image" content={homebg} />
         <meta property="og:url" content="https://martintogomez-taxi.com" />

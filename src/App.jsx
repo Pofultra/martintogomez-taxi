@@ -30,7 +30,6 @@ function App() {
           <About />
           <Mission />
           <Services />
-          <Contact />
           <Footer />
           {showWizard && <WizardModal onClose={closeWizard} />}
         </div>

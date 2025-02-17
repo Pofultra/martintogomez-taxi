@@ -90,11 +90,7 @@ export const Contact = () => {
             <p>
               <strong>{t("contact.email")}: </strong>{" "}
               service@martintogomez-taxi.com
-            </p>
-            <p>
-              <strong>{t("contact.address")}: </strong> 123 Business St, City,
-              Country
-            </p>
+            </p>            
           </div>
 
           {/* Redes sociales */}
