@@ -5,9 +5,8 @@ import { VehicleCarousel } from "../components/VehicleCarousel";
 import { useLanguage } from "../context/LanguageContext";
 
 // Import images
-import hyundai_1 from "/images/hyundai/auto_fondo_vidriera.webp";
-import hyundai_2 from "/images/hyundai/hyundai_2.webp";
-import hyundai_3 from "/images/hyundai/hyundai_3.webp";
+import eqe1 from "/images/mercedes/eqe1.webp";
+import eqe2 from "/images/mercedes/eqe2.webp";
 import mercedes_1 from "/images/mercedes/mercedes_1.webp";
 import mercedes_2 from "/images/mercedes/mercedes_2.webp";
 import mercedes_3 from "/images/mercedes/mercedes_3.webp";
@@ -23,13 +22,13 @@ const translations = {
       subtitle: "Our Fleet",
       text: "At Martinto Gomez Taxi, we offer reliable and personalized transportation with dedicated drivers. Our goal is to provide a comfortable and stress-free experience, ensuring you reach your destination safely and on time.",
     },
-    Hyundai_i30: {
-      name: "Hyundai i30",
+    EQE: {
+      name: "Mercedes-Benz EQE",
       users: "3-4 people",
       features: {
         capacity: "Capacity: 4 passengers",
-        efficient: "Efficient consumption",
-        air: "Air conditioning",
+        efficient: "Efficient electric motor",
+        air: "Dual-zone climate control",
         load_capacity: "Spacious trunk",
         wifi: "Onboard Wi-Fi",
         music: "Premium audio system",
@@ -66,16 +65,16 @@ const translations = {
       subtitle: "Nuestra Flota",
       text: "En Martinto Gomez Taxi, ofrecemos transporte confiable y personalizado con conductores dedicados. Nuestro objetivo es brindar una experiencia cómoda y sin estrés, asegurando que llegues a tu destino de manera segura y puntual.",
     },
-    Hyundai_i30: {
-      name: "Hyundai i30",
+    EQE: {
+      name: "Mercedes-Benz EQE",
       users: "3-4 personas",
       features: {
         capacity: "Capacidad: 4 pasajeros",
-        efficient: "Consumo eficiente",
-        air: "Aire acondicionado",
-        load_capacity: "Maletero espacioso",
-        wifi: "Wi-Fi a bordo",
-        music: "Sistema de audio premium",
+        efficient: "Motor eléctrico altamente eficiente",
+        air: "Climatizador automático de dos zonas",
+        load_capacity: "Amplio espacio en el maletero",
+        wifi: "Punto de acceso Wi-Fi a bordo",
+        music: "Sistema de sonido premium Burmester",
       },
     },
     Mercedes_V_Class: {
@@ -109,16 +108,16 @@ const translations = {
       subtitle: "Notre flotte",
       text: "Chez Martinto Gomez Taxi, nous offrons un transport fiable et personnalisé avec des chauffeurs dédiés. Notre objectif est de vous offrir une expérience confortable et sans stress, en vous assurant d'atteindre votre destination en toute sécurité et à l'heure.",
     },
-    Hyundai_i30: {
-      name: "Hyundai i30",
+    EQE: {
+      name: "Mercedes-Benz EQE",
       users: "3-4 personnes",
       features: {
         capacity: "Capacité : 4 passagers",
-        efficient: "Consommation efficace",
-        air: "Climatisation",
-        load_capacity: "Coffre spacieux",
-        wifi: "Wi-Fi à bord",
-        music: "Système audio premium",
+        efficient: "Moteur électrique très efficace",
+        air: "Climatisation automatique à deux zones",
+        load_capacity: "Généreux espace de rangement",
+        wifi: "Hotspot Wi-Fi à bord",
+        music: "Système audio premium Burmester",
       },
     },
     Mercedes_V_Class: {
@@ -152,16 +151,16 @@ const translations = {
       subtitle: "Unsere Flotte",
       text: "Bei Martinto Gomez Taxi bieten wir zuverlässigen und personalisierten Transport mit engagierten Fahrern an. Unser Ziel ist es, ein komfortables und stressfreies Erlebnis zu bieten und sicherzustellen, dass Sie sicher und pünktlich am Ziel ankommen.",
     },
-    Hyundai_i30: {
-      name: "Hyundai i30",
+    EQE: {
+      name: "Mercedes-Benz EQE",
       users: "3-4 Personen",
       features: {
         capacity: "Kapazität: 4 Passagiere",
-        efficient: "Effizienter Verbrauch",
-        air: "Klimaanlage",
-        load_capacity: "Geräumiger Kofferraum",
-        wifi: "WLAN an Bord",
-        music: "Premium-Audiosystem",
+        efficient: "Hoch effizienter Elektromotor",
+        air: "Zweizonen-Klimaautomatik",
+        load_capacity: "Großzügiger Kofferraum",
+        wifi: "WLAN-Hotspot an Bord",
+        music: "Premium Burmester Soundsystem",
       },
     },
     Mercedes_V_Class: {
@@ -202,7 +201,7 @@ export const About = () => {
 
   // Organize images for scalability
   const vehicleImages = {
-    hyundai: [hyundai_1, hyundai_2, hyundai_3],
+    eqe: [eqe1, eqe2,eqe1],
     mercedes: [mercedes_1, mercedes_2, mercedes_3],
     alfa: [alfa_1, alfa_2, alfa_3],
   };
@@ -211,17 +210,17 @@ export const About = () => {
   const vehicles = [
     {
       id: 1,
-      name: t("Hyundai_i30.name"),
-      capacity: t("Hyundai_i30.users"),
+      name: t("EQE.name"),
+      capacity: t("EQE.users"),
       features: [
-        { icon: "Users", text: t("Hyundai_i30.features.capacity") },
-        { icon: "Fuel", text: t("Hyundai_i30.features.efficient") },
-        { icon: "Wind", text: t("Hyundai_i30.features.air") },
-        { icon: "Luggage", text: t("Hyundai_i30.features.load_capacity") },
-        { icon: "Wifi", text: t("Hyundai_i30.features.wifi") },
-        { icon: "Music", text: t("Hyundai_i30.features.music") },
+        { icon: "Users", text: t("EQE.features.capacity") },
+        { icon: "Fuel", text: t("EQE.features.efficient") },
+        { icon: "Wind", text: t("EQE.features.air") },
+        { icon: "Luggage", text: t("EQE.features.load_capacity") },
+        { icon: "Wifi", text: t("EQE.features.wifi") },
+        { icon: "Music", text: t("EQE.features.music") },
       ],
-      images: vehicleImages.hyundai,
+      images: vehicleImages.eqe,
     },
     {
       id: 2,
